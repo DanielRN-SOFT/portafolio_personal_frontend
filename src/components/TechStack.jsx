@@ -1,15 +1,21 @@
 const techs = {
   Frontend: [
-    { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
     {
-      name: "TypeScript",
-      icon: "https://cdn.simpleicons.org/typescript/3178C6",
+      name: "HTML",
+      icon: "https://img.icons8.com/?size=100&id=20909&format=png&color=000000",
     },
+
     {
       name: "Tailwind CSS",
       icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
     },
-    { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/000000" },
+
+    { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+
+    {
+      name: "JavaScript",
+      icon: "https://img.icons8.com/?size=100&id=108784&format=png&color=000000",
+    },
   ],
   Backend: [
     { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
@@ -22,16 +28,15 @@ const techs = {
     { name: "GitHub", icon: "https://cdn.simpleicons.org/github/181717" },
     {
       name: "VS Code",
-      icon: "https://cdn.simpleicons.org/visualstudiocode/007ACC",
+      icon: "https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000",
     },
     { name: "Postman", icon: "https://cdn.simpleicons.org/postman/FF6C37" },
   ],
 };
 
-
 const TechStack = () => {
   return (
-    <section className="my-10 sm:px-5 flex justify-center items-center sm:grid sm:grid-cols-3 sm:gap-20">
+    <section className="my-10 sm:px-5 flex justify-center flex-col gap-8 items-center sm:grid sm:grid-cols-3 sm:gap-20">
       {Object.entries(techs).map(([category, items]) => (
         <div key={category} className="mb-8">
           <div className="flex items-center gap-4 mb-4">
@@ -56,8 +61,6 @@ const TechStack = () => {
           </div>
         </div>
       ))}
-    
-     
     </section>
   );
 };

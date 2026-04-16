@@ -1,10 +1,11 @@
 import "./App.css";
 import NavBar from "./components/layout/NavBar";
 import HeroSection from "./components/layout/HeroSection";
-import Card from "./components/layout/Card";
-import Titulo from "./components/layout/Titulo";
-import TechStack from "./components/layout/TechStack";
+import Card from "./components/Card";
+import Titulo from "./components/Titulo";
+import TechStack from "./components/TechStack";
 import Footer from "./components/layout/Footer";
+import FormularioContacto from "./components/FormularioContacto";
 
 function App() {
   return (
@@ -14,7 +15,12 @@ function App() {
 
       {/* Card de Proyectos */}
       <main id="proyectos" className="my-10">
-        <Titulo subtitulo={"Portafolio"} titulo={"Mis"} span={"Proyectos"} />
+        <Titulo
+          subtitulo={"Portafolio"}
+          titulo={"Mis"}
+          span={"Proyectos"}
+          colorTxt={"text-gray-900"}
+        />
         <section className="my-10 flex justify-center items-center flex-col sm:grid sm:grid-cols-3 place-items-center">
           <Card />
           <Card />
@@ -23,17 +29,22 @@ function App() {
       </main>
 
       {/* Stack de tecnologias */}
-      <section id="habilidades" className="mt-15 bg-gray-900 p-15">
+      <section id="habilidades" className="m5-15 bg-gray-900 pt-28 pb-20">
         <Titulo
           subtitulo={"Stack de Tecnologias"}
           titulo={"Mis"}
           span={"Habilidades"}
+          colorTxt={"text-gray-100"}
         />
         <TechStack />
       </section>
 
+      {/* Formulario de contacto y redes sociales */}
+      <section>
+        <FormularioContacto />
+      </section>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }
