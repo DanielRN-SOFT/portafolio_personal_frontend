@@ -23,7 +23,7 @@ const RedesSociales = ({
         <h4 className="mb-1 text-base sm:text-xl font-bold">{titulo}</h4>
         <a
           href={enlaceConvertido}
-          className="text-xs sm:text-base text-primary border-b hover:text-blue-800 transition-colors"
+          className="text-xs sm:text-base text-primary hover:border-b hover:text-blue-700 transition-colors"
           target="_blank"
         >
           {enlace}
