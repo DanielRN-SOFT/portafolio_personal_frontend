@@ -29,7 +29,7 @@ function App() {
       </main>
 
       {/* Stack de tecnologias */}
-      <section id="habilidades" className="m5-15 bg-gray-900 pt-28 pb-20">
+      <section id="habilidades" className="m5-15 bg-gray-900 pt-12 pb-20">
         <Titulo
           subtitulo={"Stack de Tecnologias"}
           titulo={"Mis"}
@@ -41,6 +41,12 @@ function App() {
 
       {/* Formulario de contacto y redes sociales */}
       <section>
+        <Titulo
+          subtitulo={"Contacto"}
+          titulo={"Informacion"}
+          span={"de Contacto"}
+          colorTxt={"text-gray-900"}
+        />
         <FormularioContacto />
       </section>
 

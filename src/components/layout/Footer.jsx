@@ -63,9 +63,8 @@ const Footer = () => {
       </nav>
       <aside>
         <p>Copyright © {new Date().getFullYear()}</p>
-        <p className="">
-          Todos los derechos reservados para: <br /> Daniel Ramirez Navarro
-        </p>
+        <p className="">Todos los derechos reservados para:</p>
+        <p>Daniel Felipe Ramirez Navarro</p>
       </aside>
     </footer>
   );
