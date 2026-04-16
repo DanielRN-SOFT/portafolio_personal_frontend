@@ -1,4 +1,15 @@
-const Card = ({ title, subtitle, description, tags, imgSrc }) => {
+const Card = ({
+  title,
+  subtitle,
+  description,
+  backend,
+  frontend,
+  baseDatos,
+  imgSrc,
+  enlaceGitHub,
+  enlaceProyecto,
+}) => {
+  console.log(title, subtitle, description);
   return (
     <div className="w-110 bg-base-200 rounded-2xl border border-base-300 overflow-hidden shadow-sm">
       {/* Imagen con overlay */}
@@ -32,22 +43,28 @@ const Card = ({ title, subtitle, description, tags, imgSrc }) => {
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {(tags || ["React", "Node.js", "MySQL · Prisma"]).map((tag) => (
-            <span
-              key={tag}
-              className="text-xs font-medium px-3 py-1 rounded-full bg-[#1e3a5f] text-blue-300"
-            >
-              {tag}
-            </span>
-          ))}
+          <span className="text-xs font-medium px-3 py-1 rounded-full bg-[#1e3a5f] text-blue-300">
+            {backend}
+          </span>
+
+          <span className="text-xs font-medium px-3 py-1 rounded-full bg-[#1e3a5f] text-blue-300">
+            {frontend}
+          </span>
+
+          <span className="text-xs font-medium px-3 py-1 rounded-full bg-[#1e3a5f] text-blue-300">
+            {baseDatos}
+          </span>
         </div>
 
         {/* Botones */}
         <div className="flex gap-2">
-          <button className="btn btn-primary btn-sm flex-1">
+          <a target="_blank" className="btn btn-primary btn-sm flex-1" href={enlaceProyecto}>
             Ver proyecto
-          </button>
-          <button className="btn btn-outline btn-sm flex-1">GitHub</button>
+          </a>
+
+          <a target="_blank" className="btn btn-secondary btn-sm flex-1" href={enlaceGitHub}>
+            GitHub
+          </a>
         </div>
       </div>
     </div>

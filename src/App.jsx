@@ -6,6 +6,7 @@ import Titulo from "./components/Titulo";
 import TechStack from "./components/TechStack";
 import Footer from "./components/layout/Footer";
 import FormularioContacto from "./components/FormularioContacto";
+import Proyectos from "./components/Proyectos";
 
 function App() {
   return (
@@ -24,9 +25,7 @@ function App() {
           colorTxt={"text-gray-900"}
         />
         <div className="my-10 flex justify-center items-center flex-col sm:grid sm:grid-cols-3 place-items-center">
-          <Card />
-          <Card />
-          <Card />
+          <Proyectos />
         </div>
       </section>
 
