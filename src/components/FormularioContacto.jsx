@@ -80,16 +80,9 @@ const FormularioContacto = () => {
           {/* { <!-- Contact Information --> */}
           <div className="order-1 w-full px-4 lg:order-2 lg:w-1/2 xl:w-6/12">
             <div className="mb-12 px-5 pt-3 sm:max-w-142.5 lg:mb-0">
-              <h2 className="text-gray-900 mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+              <h2 className="text-gray-900 mb-10 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                 Contacta conmigo
               </h2>
-              <p className="text-base leading-relaxed text-gray-600">
-                If you have any question and feedback contact with us
-              </p>
-              <p className="mb-9 text-base leading-relaxed text-gray-600">
-                We're here to help and answer any questions you might have. We
-                look forward to hearing from you.
-              </p>
 
               {/* { <!-- GitHub --> */}
               <RedesSociales
@@ -112,6 +105,15 @@ const FormularioContacto = () => {
                 enlace={"daniel20ramirez06@gmail.com"}
                 enlaceEmail={true}
                 ClasesIcono={"fas fa-envelope"}
+              />
+
+              {/* { <!-- Correo electronico --> */}
+              <RedesSociales
+                titulo={"LinkedIn"}
+                enlace={
+                  "https://www.linkedin.com/in/daniel-ram%C3%ADrez-navarro-658397376/"
+                }
+                ClasesIcono={"fa-brands fa-linkedin"}
               />
             </div>
           </div>
