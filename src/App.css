@@ -1,4 +1,18 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, corporate;
+  themes:
+    light --default,
+    dark --prefersdark,
+    corporate;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#inicio,
+#proyectos,
+#habilidades,
+#contacto {
+  scroll-margin-top: 90px;
 }

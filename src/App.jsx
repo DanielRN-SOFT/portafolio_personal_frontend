@@ -11,22 +11,24 @@ function App() {
   return (
     <>
       <NavBar />
-      <HeroSection />
+      <section id="inicio">
+        <HeroSection />
+      </section>
 
       {/* Card de Proyectos */}
-      <main id="proyectos" className="my-10">
+      <section id="proyectos" className="my-10">
         <Titulo
           subtitulo={"Portafolio"}
           titulo={"Mis"}
           span={"Proyectos"}
           colorTxt={"text-gray-900"}
         />
-        <section className="my-10 flex justify-center items-center flex-col sm:grid sm:grid-cols-3 place-items-center">
+        <div className="my-10 flex justify-center items-center flex-col sm:grid sm:grid-cols-3 place-items-center">
           <Card />
           <Card />
           <Card />
-        </section>
-      </main>
+        </div>
+      </section>
 
       {/* Stack de tecnologias */}
       <section id="habilidades" className="m5-15 bg-gray-900 pt-12 pb-20">
@@ -40,7 +42,7 @@ function App() {
       </section>
 
       {/* Formulario de contacto y redes sociales */}
-      <section>
+      <section id="contacto">
         <Titulo
           subtitulo={"Contacto"}
           titulo={"Informacion"}

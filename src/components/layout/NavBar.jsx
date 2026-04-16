@@ -1,4 +1,26 @@
+import { useState, useEffect } from "react";
 const NavBar = () => {
+  const [activo, setActivo] = useState("inicio");
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActivo(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-80px 0px -50% 0px", // ajusta según altura navbar
+        threshold: 0,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
       <div className="navbar-start">
@@ -25,51 +47,113 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Inicio</a>
+              <a
+                className={`relative transition-all duration-300 ${
+                  activo === "inicio"
+                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                    : ""
+                }`}
+                href="#inicio"
+              >
+                Inicio
+              </a>
             </li>
             <li>
-              <a>Sobre mi</a>
+              <a
+                className={`relative transition-all duration-300 ${
+                  activo === "proyectos"
+                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                    : ""
+                }`}
+                href="#proyectos"
+              >
+                Proyectos
+              </a>
             </li>
             <li>
-              <a href="#proyectos">Proyectos</a>
+              <a
+                className={`relative transition-all duration-300 ${
+                  activo === "habilidades"
+                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                    : ""
+                }`}
+                href="#habilidades"
+              >
+                Habilidades
+              </a>
             </li>
             <li>
-              <a>Habilitades</a>
-            </li>
-            <li>
-              <a>Servicios</a>
-            </li>
-            <li>
-              <a>Contacto</a>
+              <a
+                className={`relative transition-all duration-300 ${
+                  activo === "contacto"
+                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                    : ""
+                }`}
+                href="#contacto"
+              >
+                Contacto
+              </a>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Daniel Ramirez Navarro</a>
+        <a className="btn btn-ghost text-xl text-primary">
+          Daniel Ramirez Navarro
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Inicio</a>
+            <a
+              className={`relative transition-all duration-300 ${
+                activo === "inicio"
+                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                  : ""
+              }`}
+              href="#inicio"
+            >
+              Inicio
+            </a>
           </li>
           <li>
-            <a>Sobre mi</a>
+            <a
+              className={`relative transition-all duration-300 ${
+                activo === "proyectos"
+                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                  : ""
+              }`}
+              href="#proyectos"
+            >
+              Proyectos
+            </a>
           </li>
           <li>
-            <a>Proyectos</a>
+            <a
+              className={`relative transition-all duration-300 ${
+                activo === "habilidades"
+                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                  : ""
+              }`}
+              href="#habilidades"
+            >
+              Habilidades
+            </a>
           </li>
           <li>
-            <a>Habilitades</a>
-          </li>
-          <li>
-            <a>Servicios</a>
-          </li>
-          <li>
-            <a>Contacto</a>
+            <a
+              className={`relative transition-all duration-300 ${
+                activo === "contacto"
+                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                  : ""
+              }`}
+              href="#contacto"
+            >
+              Contacto
+            </a>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <input type="hidden" />
       </div>
     </div>
   );

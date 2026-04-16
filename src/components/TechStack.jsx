@@ -53,7 +53,7 @@ const TechStack = () => {
                 className="tooltip tooltip-top"
                 data-tip={tech.name}
               >
-                <div className="w-17 h-17 rounded-xl bg-gray-100 border border-base-300 flex items-center justify-center hover:border-gray-500 hover:bg-gray-400 transition-colors cursor-default">
+                <div className="w-17 h-17 rounded-xl bg-gray-100 border border-base-300 flex items-center justify-center hover:border-gray-400 hover:bg-gray-300 transition-colors cursor-default">
                   <img src={tech.icon} alt={tech.name} className="w-7 h-7" />
                 </div>
               </div>

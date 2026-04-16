@@ -20,8 +20,12 @@ const HeroSection = () => {
           </p>
 
           <div className="flex justify-center items-center gap-5">
-            <button className="btn btn-primary">Mis proyectos</button>
-            <button className="btn btn-neutral">Mis habilidades</button>
+            <button className="btn btn-primary">
+              <a href="#proyectos">Mis proyectos</a>
+            </button>
+            <button className="btn btn-secondary">
+              <a href="#habilidades">Mis habilidades</a>
+            </button>
           </div>
         </div>
       </div>
