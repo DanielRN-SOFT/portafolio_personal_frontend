@@ -22,6 +22,7 @@ const Proyectos = () => {
       {infoProyectos.map((proyecto) => {
         return (
           <Card
+            key={proyecto.id}
             title={proyecto.titulo}
             subtitle={proyecto.subtitulo}
             backend={proyecto.backend}

@@ -97,7 +97,7 @@ const NavBar = () => {
           </ul>
         </div>
         <a className="btn btn-ghost text-xl text-primary">
-          Daniel Ramirez Navarro
+          Daniel Felipe Ramírez Navarro
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">

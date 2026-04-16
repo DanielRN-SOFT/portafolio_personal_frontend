@@ -5,7 +5,7 @@ const HeroSection = () => {
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-3xl">
           <h1 className="mb-2 text-5xl font-bold fade-in">
-            Daniel Felipe Ramirez Navarro
+            Daniel Felipe Ramírez Navarro
           </h1>
           <span className="mb-5 text-rotate text-2xl tracking-widest leading-8">
             <span className="justify-items-center">

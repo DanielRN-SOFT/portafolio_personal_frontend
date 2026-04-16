@@ -1,6 +1,6 @@
 import "./App.css";
 import NavBar from "./components/layout/NavBar";
-import HeroSection from "./components/layout/HeroSection";
+import HeroSection from "./components/HeroSection";
 import Card from "./components/Card";
 import Titulo from "./components/Titulo";
 import TechStack from "./components/TechStack";

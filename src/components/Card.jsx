@@ -9,15 +9,14 @@ const Card = ({
   enlaceGitHub,
   enlaceProyecto,
 }) => {
-  console.log(title, subtitle, description);
   return (
     <div className="w-110 bg-base-200 rounded-2xl border border-base-300 overflow-hidden shadow-sm">
       {/* Imagen con overlay */}
       <div className="relative h-44 bg-[#0f2240] overflow-hidden">
         <img
-          src={imgSrc || "/fintrack.jpg"}
+          src={imgSrc}
           alt={title}
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-contain opacity-40"
         />
         {/* Badge top-right */}
         <span className="absolute top-3 right-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
@@ -58,11 +57,19 @@ const Card = ({
 
         {/* Botones */}
         <div className="flex gap-2">
-          <a target="_blank" className="btn btn-primary btn-sm flex-1" href={enlaceProyecto}>
+          <a
+            target="_blank"
+            className="btn btn-primary btn-sm flex-1"
+            href={enlaceProyecto}
+          >
             Ver proyecto
           </a>
 
-          <a target="_blank" className="btn btn-secondary btn-sm flex-1" href={enlaceGitHub}>
+          <a
+            target="_blank"
+            className="btn btn-secondary btn-sm flex-1"
+            href={enlaceGitHub}
+          >
             GitHub
           </a>
         </div>
