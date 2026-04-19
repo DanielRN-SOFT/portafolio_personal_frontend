@@ -10,7 +10,7 @@ const Card = ({
   enlaceProyecto,
 }) => {
   return (
-    <div className="w-110 bg-base-200 rounded-2xl border border-base-300 overflow-hidden shadow-sm">
+    <div className="bg-base-200 m-3 sm:m-2 rounded-2xl border border-base-300 overflow-hidden shadow-sm">
       {/* Imagen con overlay */}
       <div className="relative h-44 bg-[#0f2240] overflow-hidden">
         <img

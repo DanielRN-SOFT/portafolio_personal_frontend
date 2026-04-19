@@ -24,7 +24,7 @@ function App() {
           span={"Proyectos"}
           colorTxt={"text-gray-900"}
         />
-        <div className="my-10 flex justify-center items-center flex-col sm:grid sm:grid-cols-3 place-items-center">
+        <div className="my-10 flex justify-center items-center flex-col md:grid md:grid-cols-2 md:place-items-center lg:grid lg:grid-cols-3 lg:place-items-center">
           <Proyectos />
         </div>
       </section>
