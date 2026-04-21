@@ -7,13 +7,13 @@ const HeroSection = () => {
           <h1 className="mb-2 text-5xl font-bold fade-in">
             Daniel Felipe Ramírez Navarro
           </h1>
-          {/* <span className="mb-5 text-rotate text-2xl tracking-widest leading-8">
-            <span className="justify-items-center">
+          <span className="mb-5 text-rotate text-lg sm:text-xl md:text-2xl tracking-wide leading-snug">
+            <span className="flex flex-col items-center text-center max-w-full px-2">
               <span>Desarrollador de Software</span>
               <span>Full Stack Developer</span>
               <span>Diseño de Soluciones Digitales</span>
             </span>
-          </span> */}
+          </span>
           <p className="mb-5">
             Transformo ideas en experiencias digitales excepcionales usando
             tecnologías modernas y código limpio
