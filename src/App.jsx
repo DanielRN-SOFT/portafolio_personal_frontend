@@ -7,6 +7,7 @@ import TechStack from "./components/TechStack";
 import Footer from "./components/layout/Footer";
 import FormularioContacto from "./components/FormularioContacto";
 import Proyectos from "./components/Proyectos";
+import SobreMi from "./components/SobreMi";
 
 function App() {
   return (
@@ -14,6 +15,18 @@ function App() {
       <NavBar />
       <section id="inicio">
         <HeroSection />
+      </section>
+
+      {/* Sobre mi */}
+      <section id="sobre-mi" className="pt-10 pb-20 bg-gray-900">
+        <Titulo
+          subtitulo={"¿Quien soy?"}
+          titulo={"Sobre"}
+          span={"Mi"}
+          colorTxt={"text-gray-100"}
+        />
+
+        <SobreMi/>
       </section>
 
       {/* Card de Proyectos */}
@@ -30,7 +43,7 @@ function App() {
       </section>
 
       {/* Stack de tecnologias */}
-      <section id="habilidades" className="m5-15 bg-gray-900 pt-12 pb-20">
+      <section id="habilidades" className="my-10 bg-gray-900 pt-12 pb-20">
         <Titulo
           subtitulo={"Stack de Tecnologias"}
           titulo={"Mis"}
@@ -41,11 +54,11 @@ function App() {
       </section>
 
       {/* Formulario de contacto y redes sociales */}
-      <section id="contacto">
+      <section id="contacto" className="my-20">
         <Titulo
           subtitulo={"Contacto"}
-          titulo={"Informacion"}
-          span={"de Contacto"}
+          titulo={"Mi"}
+          span={"Contacto"}
           colorTxt={"text-gray-900"}
         />
         <FormularioContacto />

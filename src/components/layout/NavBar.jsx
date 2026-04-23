@@ -58,6 +58,20 @@ const NavBar = () => {
                 Inicio
               </a>
             </li>
+
+            <li>
+              <a
+                className={`relative transition-all duration-300 ${
+                  activo === "sobre-mi"
+                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                    : ""
+                }`}
+                href="#sobre-mi"
+              >
+                Sobre Mi
+              </a>
+            </li>
+
             <li>
               <a
                 className={`relative transition-all duration-300 ${
@@ -114,6 +128,20 @@ const NavBar = () => {
               Inicio
             </a>
           </li>
+
+          <li>
+            <a
+              className={`relative transition-all duration-300 ${
+                activo === "sobre-mi"
+                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                  : ""
+              }`}
+              href="#sobre-mi"
+            >
+              Sobre mi
+            </a>
+          </li>
+
           <li>
             <a
               className={`relative transition-all duration-300 ${
