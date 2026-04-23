@@ -3,7 +3,7 @@ import RedesSociales from "./RedesSociales";
 
 const FormularioContacto = () => {
   return (
-    <div className="relative z-10 overflow-hidden py-12 sm:py-20 lg:py-20 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div className="relative z-10 overflow-hidden py-8 sm:py-16 lg:py-16 text-gray-900 dark:text-gray-100 transition-colors duration-300 mb-3">
       <div className="container mx-auto">
         <div className="mx-4 flex flex-wrap justify-center lg:justify-between">
           {/* { <!-- Contact Form --> */}
@@ -79,10 +79,14 @@ const FormularioContacto = () => {
 
           {/* { <!-- Contact Information --> */}
           <div className="order-1 w-full px-4 lg:order-2 lg:w-1/2 xl:w-6/12">
-            <div className="mb-12 px-5 pt-3 sm:max-w-142.5 lg:mb-0">
-              <h2 className="text-gray-900 mb-10 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
-                Contacta conmigo
+            <div className="mb-15 px-5 pt-1 sm:max-w-142.5 lg:mb-0">
+              <h2 className="text-gray-900 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+                Conversemos
               </h2>
+              <p className="text-gray-500  mb-10 text-lg ">
+                ¿Tienes un proyecto en mente? Estoy disponible para
+                colaboraciones y nuevos desafíos.{" "}
+              </p>
 
               {/* { <!-- GitHub --> */}
               <RedesSociales
