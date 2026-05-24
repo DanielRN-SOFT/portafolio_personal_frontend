@@ -94,15 +94,7 @@ const FormularioContacto = () => {
                 ClasesIcono={"fa-brands fa-square-github"}
                 enlace={"https://github.com/DanielRN-SOFT"}
               />
-
-              {/* WhatsApp */}
-              <RedesSociales
-                titulo={"WhatsApp"}
-                enlace={"573215052083"}
-                ClasesIcono={"fa-brands fa-whatsapp"}
-                enlaceWhatsApp={true}
-              />
-
+              
               {/* { <!-- Correo electronico --> */}
               <RedesSociales
                 titulo={"Correo electronico"}
