@@ -1,12 +1,24 @@
 import ItemLineaTiempo from "./ItemLineaTiempo";
+import {
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiPrisma,
+  SiMysql,
+  SiLaravel,
+} from "react-icons/si";
 
-const Tag = ({ nombre }) => (
-  <span className="badge badge-soft badge-primary rounded-3xl">{nombre}</span>
+import { TbApi } from "react-icons/tb";
+
+const Tag = ({ nombre, icono }) => (
+  <span className="badge badge-soft badge-primary rounded-3xl font-bold">
+    {icono} {nombre}
+  </span>
 );
 
 const SobreMi = () => {
   return (
-    <div className="max-w-5xl mx-auto px-6   text-gray-100 font-sans">
+    <div className="max-w-5xl mx-auto px-6text-gray-100 font-sans">
       {/* Bio */}
       <div className="max-w-xl mx-auto text-center mb-12">
         <p className="text-sm md:text-base leading-relaxed text-gray-400 mb-3">
@@ -27,12 +39,13 @@ const SobreMi = () => {
 
         {/* Tags */}
         <div className="flex flex-wrap justify-center gap-2">
-          <Tag nombre={"React"}></Tag>
-          <Tag nombre={"Node.js"}></Tag>
-          <Tag nombre={"Express"}></Tag>
-          <Tag nombre={"Prisma"}></Tag>
-          <Tag nombre={"REST APIs"}></Tag>
-          <Tag nombre={"MySQL"}></Tag>
+          <Tag nombre="React" icono={<SiReact />} />
+          <Tag nombre="Node.js" icono={<SiNodedotjs />} />
+          <Tag nombre="Express" icono={<SiExpress />} />
+          <Tag nombre="Laravel" icono={<SiLaravel />}></Tag>
+          <Tag nombre="Prisma" icono={<SiPrisma />} />
+          <Tag nombre="REST APIs" icono={<TbApi />} />
+          <Tag nombre="MySQL" icono={<SiMysql />} />
         </div>
       </div>
 

@@ -110,7 +110,7 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-primary">
+        <a className="btn btn-ghost text-lg text-primary">
           Daniel Felipe Ramírez Navarro
         </a>
       </div>
