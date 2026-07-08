@@ -18,15 +18,16 @@ function App() {
       </section>
 
       {/* Sobre mi */}
-      <section id="sobre-mi" className="pt-10 pb-20 bg-gray-900">
+      <section id="sobre-mi" className="pt-2 pb-20 bg-gray-900">
         <Titulo
           subtitulo={"¿Quien soy?"}
           titulo={"Sobre"}
           span={"Mi"}
           colorTxt={"text-gray-100"}
+          oscuro
         />
 
-        <SobreMi/>
+        <SobreMi />
       </section>
 
       {/* Card de Proyectos */}
@@ -49,6 +50,7 @@ function App() {
           titulo={"Mis"}
           span={"Habilidades"}
           colorTxt={"text-gray-100"}
+          oscuro
         />
         <TechStack />
       </section>
