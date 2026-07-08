@@ -1,3 +1,39 @@
+const TerminalCardHeader = () => (
+  <div className="flex items-center gap-1.5 pb-2 mb-3 border-b border-base-200">
+    <span className="w-1.5 h-1.5 rounded-full bg-base-300" />
+    <span className="w-1.5 h-1.5 rounded-full bg-base-300" />
+    <span className="w-1.5 h-1.5 rounded-full bg-base-300" />
+    <span className="ml-auto text-[10px] font-mono text-gray-400 tracking-wide">
+      historial.log
+    </span>
+  </div>
+);
+
+const LogEntry = ({ titulo, institucion, fecha }) => {
+  const enCurso = fecha.toLowerCase().includes("actualidad");
+
+  return (
+    <div>
+      <h4 className="font-bold text-primary flex items-baseline gap-1.5">
+        <span className="font-mono text-primary/40 text-xs">{">"}</span>
+        {titulo}
+      </h4>
+      <h5 className="text-xs text-gray-500 font-mono mt-0.5">{institucion}</h5>
+      <h6 className="font-mono text-[11px] text-gray-500 mt-1 inline-flex items-center gap-1.5">
+        <span className="text-primary/40">[</span>
+        {fecha}
+        <span className="text-primary/40">]</span>
+        {enCurso && (
+          <span className="relative inline-flex w-1.5 h-1.5">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-success opacity-75 animate-ping" />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-success" />
+          </span>
+        )}
+      </h6>
+    </div>
+  );
+};
+
 const ItemLineaTiempo = ({
   primeraFecha,
   primerTitulo,
@@ -12,7 +48,7 @@ const ItemLineaTiempo = ({
     <>
       {/* ── MÓVIL: fila con 3 columnas fijas ── */}
       <li className="grid grid-cols-[52px_24px_1fr] lg:hidden">
-        <div className="flex justify-end items-start pt-1.5 pr-2 text-xs text-gray-500 font-medium">
+        <div className="flex justify-end items-start pt-1.5 pr-2 text-xs text-gray-500 font-mono font-medium">
           {year}
         </div>
         <div className="flex flex-col items-center">
@@ -68,7 +104,9 @@ const ItemLineaTiempo = ({
           />
         </div>
         {/* Año */}
-        <span className="text-sm font-medium text-gray-500">{year}</span>
+        <span className="text-sm font-mono font-medium text-gray-500">
+          {year}
+        </span>
         {/* Card */}
         <div className="timeline-box text-sm text-gray-900 w-full">
           <CardContent
@@ -97,17 +135,20 @@ const CardContent = ({
   segundaFecha,
 }) => (
   <>
-    <div className="mb-3 pt-1">
-      <h4 className="font-bold text-primary">{primerTitulo}</h4>
-      <h5 className="text-xs text-gray-500">{primeraInstitucion}</h5>
-      <h6 className="font-bold text-sm">{primeraFecha}</h6>
+    <TerminalCardHeader />
+    <div className="mb-3">
+      <LogEntry
+        titulo={primerTitulo}
+        institucion={primeraInstitucion}
+        fecha={primeraFecha}
+      />
     </div>
     <hr className="my-2 border-base-200" />
-    <div>
-      <h4 className="font-bold text-primary">{segundoTitulo}</h4>
-      <h5 className="text-xs text-gray-500">{segundaInstitucion}</h5>
-      <h6 className="font-bold text-sm">{segundaFecha}</h6>
-    </div>
+    <LogEntry
+      titulo={segundoTitulo}
+      institucion={segundaInstitucion}
+      fecha={segundaFecha}
+    />
   </>
 );
 

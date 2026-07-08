@@ -11,16 +11,26 @@ import {
 import { TbApi } from "react-icons/tb";
 
 const Tag = ({ nombre, icono }) => (
-  <span className="badge badge-soft badge-primary rounded-3xl font-bold">
+  <span className="badge badge-outline border-primary/25 bg-primary/5 text-primary/90 font-mono text-xs sm:text-sm font-medium rounded-md px-3 py-3 gap-1.5 normal-case hover:bg-primary/10 hover:border-primary/40 transition-colors">
+    <span className="text-primary/40">--</span>
     {icono} {nombre}
   </span>
 );
 
 const SobreMi = () => {
   return (
-    <div className="max-w-5xl mx-auto px-6text-gray-100 font-sans">
+    <div className="max-w-5xl mx-auto px-6 text-gray-100 font-sans">
       {/* Bio */}
       <div className="max-w-xl mx-auto text-center mb-12">
+        {/* Prompt eyebrow, coherente con el hero */}
+        <p className="font-mono text-xs sm:text-sm text-primary/70 tracking-tight mb-4">
+          <span className="text-secondary">daniel@dev</span>
+          <span className="text-base-content/30">:</span>
+          <span className="text-primary/50">~</span>
+          <span className="text-base-content/30">$</span> cat sobre-mi.md
+          <span className="inline-block w-[0.5ch] h-[1em] bg-primary/60 animate-pulse ml-1 align-middle" />
+        </p>
+
         <p className="text-sm md:text-base leading-relaxed text-gray-400 mb-3">
           Soy{" "}
           <span className="text-gray-100 font-medium">
@@ -37,15 +47,15 @@ const SobreMi = () => {
           </span>
         </p>
 
-        {/* Tags */}
+        {/* Tags como flags de CLI */}
         <div className="flex flex-wrap justify-center gap-2">
-          <Tag nombre="React" icono={<SiReact />} />
-          <Tag nombre="Node.js" icono={<SiNodedotjs />} />
-          <Tag nombre="Express" icono={<SiExpress />} />
-          <Tag nombre="Laravel" icono={<SiLaravel />}></Tag>
-          <Tag nombre="Prisma" icono={<SiPrisma />} />
-          <Tag nombre="REST APIs" icono={<TbApi />} />
-          <Tag nombre="MySQL" icono={<SiMysql />} />
+          <Tag nombre="react" icono={<SiReact />} />
+          <Tag nombre="node" icono={<SiNodedotjs />} />
+          <Tag nombre="express" icono={<SiExpress />} />
+          <Tag nombre="laravel" icono={<SiLaravel />} />
+          <Tag nombre="prisma" icono={<SiPrisma />} />
+          <Tag nombre="rest-api" icono={<TbApi />} />
+          <Tag nombre="mysql" icono={<SiMysql />} />
         </div>
       </div>
 

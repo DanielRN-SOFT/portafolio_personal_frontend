@@ -55,42 +55,108 @@ const HeroSection = () => {
         className="absolute inset-0 opacity-[0.15] text-primary"
         style={{
           backgroundImage: "radial-gradient(currentColor 1px, transparent 1px)",
-          backgroundSize: "26px 26px",
+          backgroundSize: "40px 40px",
         }}
       />
-      {/* Resplandores azules suaves, coherentes con un fondo claro */}
-      <div className="pointer-events-none absolute -top-24 -left-24 h-95 w-95 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -right-16 h-85 w-85 rounded-full bg-primary/10 blur-3xl" />
-
       <div className="relative z-10 w-full max-w-2xl">
-        {/* Ventana de terminal, en clave clara */}
-        <div className="rounded-lg border border-base-300 bg-base-100 shadow-xl shadow-primary/5">
-          {/* Barra de título */}
-          <div className="flex items-center gap-2 border-b border-base-300 bg-base-200/60 px-4 py-3 rounded-t-lg">
-            <span className="h-3 w-3 rounded-full bg-base-300" />
-            <span className="h-3 w-3 rounded-full bg-base-300" />
-            <span className="h-3 w-3 rounded-full bg-primary/70" />
-            <span className="ml-3 text-xs text-base-content/40 tracking-wide font-mono">
-              ~/portafolio — zsh
-            </span>
+        {/* Ventana estilo Windows Terminal, con tokens de daisyUI */}
+        <div className="rounded-lg overflow-hidden border border-neutral-content/10 bg-neutral text-neutral-content shadow-2xl shadow-black/40">
+          {/* Fila de pestañas, estilo Fluent */}
+          <div className="flex items-stretch bg-neutral-content/5 pt-1.5 px-1.5 gap-1">
+            <div className="flex items-center gap-2 rounded-t-md bg-neutral px-3 py-1.5 border-t border-x border-neutral-content/10">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                className="shrink-0 text-primary"
+                aria-hidden="true"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="14"
+                  height="14"
+                  rx="1.5"
+                  className="fill-current"
+                />
+                <path
+                  d="M4 5L6.5 8L4 11"
+                  stroke="currentColor"
+                  className="text-neutral"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M8 11H12"
+                  stroke="currentColor"
+                  className="text-neutral"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <span className="text-xs font-sans tracking-tight text-neutral-content/90">
+                Windows PowerShell
+              </span>
+              <span className="btn btn-ghost btn-xs btn-circle text-neutral-content/50 hover:text-neutral-content">
+                ×
+              </span>
+            </div>
+            <button
+              type="button"
+              tabIndex={-1}
+              aria-hidden="true"
+              className="btn btn-ghost btn-sm text-neutral-content/50"
+            >
+              +
+            </button>
+
+            {/* Controles de ventana */}
+            <div className="ml-auto flex items-stretch">
+              <button
+                type="button"
+                tabIndex={-1}
+                aria-hidden="true"
+                className="btn btn-ghost btn-sm rounded-none text-neutral-content/70"
+              >
+                &#8211;
+              </button>
+              <button
+                type="button"
+                tabIndex={-1}
+                aria-hidden="true"
+                className="btn btn-ghost btn-sm rounded-none text-neutral-content/70 text-xs"
+              >
+                &#9633;
+              </button>
+              <button
+                type="button"
+                tabIndex={-1}
+                aria-hidden="true"
+                className="btn btn-ghost btn-sm rounded-none text-neutral-content/70 hover:btn-error"
+              >
+                &#10005;
+              </button>
+            </div>
           </div>
 
-          {/* Cuerpo */}
+          {/* Cuerpo de la terminal */}
           <div className="px-6 py-10 sm:px-10 sm:py-14 text-center font-mono">
-            <p className="text-xs sm:text-sm text-primary/70 mb-3 tracking-widest">
-              $ whoami
+            <p className="text-xs sm:text-sm text-primary mb-3 tracking-tight text-left sm:text-center">
+              PS C:\Users\Daniel&gt; whoami
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-base-content mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-content mb-6 tracking-tight">
               Daniel Felipe Ramírez Navarro
             </h1>
 
             <div className="min-h-7 mb-8 text-base sm:text-lg text-primary font-medium">
-              <span className="text-base-content/30">&gt;&nbsp;</span>
+              <span className="text-neutral-content/40">&gt;&nbsp;</span>
               {text}
               <span className="inline-block w-[0.55ch] bg-primary animate-pulse ml-0.5 align-middle h-[1em]" />
             </div>
 
-            <p className="mb-10 text-sm sm:text-base text-base-content/60 max-w-md mx-auto leading-relaxed">
+            <p className="mb-10 text-sm sm:text-base text-neutral-content/60 max-w-md mx-auto leading-relaxed">
               Transformo ideas en experiencias digitales excepcionales usando
               tecnologías modernas y código limpio.
             </p>
@@ -98,13 +164,13 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row justify-center items-center gap-3">
               <a
                 href="#proyectos"
-                className="btn btn-primary rounded-full px-6 font-mono font-normal normal-case"
+                className="btn btn-primary rounded-sm px-6 font-mono font-normal normal-case"
               >
                 ./ver-proyectos.sh
               </a>
               <a
                 href="#habilidades"
-                className="btn btn-outline btn-primary rounded-full px-6 font-mono font-normal normal-case"
+                className="btn btn-outline btn-primary rounded-sm px-6 font-mono font-normal normal-case"
               >
                 ./ver-habilidades.sh
               </a>
