@@ -18,7 +18,7 @@ function App() {
       </section>
 
       {/* Sobre mi */}
-      <section id="sobre-mi" className="pt-2 pb-20 bg-gray-900">
+      <section id="sobre-mi" className="pt-2 pb-20 bg-neutral">
         <Titulo
           subtitulo={"¿Quien soy?"}
           titulo={"Sobre"}
@@ -31,7 +31,7 @@ function App() {
       </section>
 
       {/* Card de Proyectos */}
-      <section id="proyectos" className="my-10">
+      <section id="proyectos" className="">
         <Titulo
           subtitulo={"Portafolio"}
           titulo={"Mis"}
@@ -44,7 +44,7 @@ function App() {
       </section>
 
       {/* Stack de tecnologias */}
-      <section id="habilidades" className="my-10 bg-gray-900 pt-12 pb-20">
+      <section id="habilidades" className="my-2 bg-neutral pt-2 pb-20">
         <Titulo
           subtitulo={"Stack de Tecnologias"}
           titulo={"Mis"}
