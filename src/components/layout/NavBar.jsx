@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
+
+const NAV_ITEMS = [
+  { id: "inicio", label: "Inicio" },
+  { id: "sobre-mi", label: "Sobre mí" },
+  { id: "proyectos", label: "Proyectos" },
+  { id: "habilidades", label: "Habilidades" },
+  { id: "contacto", label: "Contacto" },
+];
+
 const NavBar = () => {
   const [activo, setActivo] = useState("inicio");
+
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const observer = new IntersectionObserver(
@@ -12,7 +22,7 @@ const NavBar = () => {
         });
       },
       {
-        rootMargin: "-80px 0px -50% 0px", // ajusta según altura navbar
+        rootMargin: "-80px 0px -50% 0px",
         threshold: 0,
       },
     );
@@ -21,11 +31,38 @@ const NavBar = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const NavLink = ({ id, label }) => {
+    const isActive = activo === id;
+    return (
+      <a
+        href={`#${id}`}
+        className={`relative px-1 py-1.5 text-sm font-medium tracking-normal transition-colors duration-200 ${
+          isActive
+            ? "text-primary"
+            : "text-base-content/60 hover:text-base-content"
+        }`}
+      >
+        {label}
+        <span
+          className={`absolute -bottom-0.5 left-0 h-0.5 w-full bg-primary transition-transform duration-200 origin-left ${
+            isActive ? "scale-x-100" : "scale-x-0"
+          }`}
+        />
+      </a>
+    );
+  };
+
   return (
-    <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
-      <div className="navbar-start">
+    <div className="navbar sticky top-0 z-50 border-b border-base-300 bg-base-100/90 backdrop-blur px-4 sm:px-6">
+      <div className="navbar-start gap-2">
+        {/* Dropdown móvil */}
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-sm lg:hidden"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -33,156 +70,47 @@ const NavBar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
-            tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            tabIndex={-1}
+            className="menu menu-sm dropdown-content z-1 mt-3 w-56 gap-1 rounded-box border border-base-300 bg-base-100 p-2 shadow-xl shadow-primary/5"
           >
-            <li>
-              <a
-                className={`relative transition-all duration-300 ${
-                  activo === "inicio"
-                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                    : ""
-                }`}
-                href="#inicio"
-              >
-                Inicio
-              </a>
-            </li>
-
-            <li>
-              <a
-                className={`relative transition-all duration-300 ${
-                  activo === "sobre-mi"
-                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                    : ""
-                }`}
-                href="#sobre-mi"
-              >
-                Sobre Mi
-              </a>
-            </li>
-
-            <li>
-              <a
-                className={`relative transition-all duration-300 ${
-                  activo === "proyectos"
-                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                    : ""
-                }`}
-                href="#proyectos"
-              >
-                Proyectos
-              </a>
-            </li>
-            <li>
-              <a
-                className={`relative transition-all duration-300 ${
-                  activo === "habilidades"
-                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                    : ""
-                }`}
-                href="#habilidades"
-              >
-                Habilidades
-              </a>
-            </li>
-            <li>
-              <a
-                className={`relative transition-all duration-300 ${
-                  activo === "contacto"
-                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                    : ""
-                }`}
-                href="#contacto"
-              >
-                Contacto
-              </a>
-            </li>
+            {NAV_ITEMS.map((item) => (
+              <li key={item.id}>
+                <NavLink id={item.id} label={item.label} />
+              </li>
+            ))}
           </ul>
         </div>
-        <a className="btn btn-ghost text-lg text-primary">
+
+        {/* Logo */}
+        <a
+          href="#inicio"
+          className="text-lg font-semibold tracking-tight text-primary"
+        >
           Daniel Felipe Ramírez Navarro
         </a>
       </div>
+
+      {/* Nav desktop */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a
-              className={`relative transition-all duration-300 ${
-                activo === "inicio"
-                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                  : ""
-              }`}
-              href="#inicio"
-            >
-              Inicio
-            </a>
-          </li>
-
-          <li>
-            <a
-              className={`relative transition-all duration-300 ${
-                activo === "sobre-mi"
-                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                  : ""
-              }`}
-              href="#sobre-mi"
-            >
-              Sobre mi
-            </a>
-          </li>
-
-          <li>
-            <a
-              className={`relative transition-all duration-300 ${
-                activo === "proyectos"
-                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                  : ""
-              }`}
-              href="#proyectos"
-            >
-              Proyectos
-            </a>
-          </li>
-          <li>
-            <a
-              className={`relative transition-all duration-300 ${
-                activo === "habilidades"
-                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                  : ""
-              }`}
-              href="#habilidades"
-            >
-              Habilidades
-            </a>
-          </li>
-          <li>
-            <a
-              className={`relative transition-all duration-300 ${
-                activo === "contacto"
-                  ? "text-primary after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                  : ""
-              }`}
-              href="#contacto"
-            >
-              Contacto
-            </a>
-          </li>
+        <ul className="flex items-center gap-6">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.id}>
+              <NavLink id={item.id} label={item.label} />
+            </li>
+          ))}
         </ul>
       </div>
-      <div className="navbar-end">
-        <input type="hidden" />
-      </div>
+
+      <div className="navbar-end" />
     </div>
   );
 };
