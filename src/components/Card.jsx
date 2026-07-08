@@ -38,7 +38,7 @@ const WinTitleBar = ({ label, variant = "dark" }) => {
     >
       {/* Icono + título, como la barra de una ventana de Windows Terminal */}
       <span
-        className={`mr-1.5 h-2 w-2 rounded-[2px] ${
+        className={`mr-1.5 h-2 w-2 rounded-xs ${
           isDark ? "bg-primary/70" : "bg-primary/50"
         }`}
       />
@@ -242,7 +242,7 @@ const Card = ({
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-outline btn-primary btn-sm flex-1 rounded-sm font-mono font-normal normal-case"
+            className="btn btn-outline btn-secondary btn-sm flex-1 rounded-sm font-mono font-normal normal-case"
             href={enlaceGitHub}
           >
             git clone

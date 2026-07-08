@@ -18,7 +18,7 @@ function App() {
       </section>
 
       {/* Sobre mi */}
-      <section id="sobre-mi" className="pt-2 pb-20 bg-neutral">
+      <section id="sobre-mi" className="pt-10 pb-20 bg-neutral">
         <Titulo
           subtitulo={"¿Quien soy?"}
           titulo={"Sobre"}
@@ -31,20 +31,24 @@ function App() {
       </section>
 
       {/* Card de Proyectos */}
-      <section id="proyectos" className="">
+      <section
+        id="proyectos"
+        className="pt-10 pb-10 bg-linear-to-b from-slate-900 via-slate-950 to-slate-950/95"
+      >
         <Titulo
           subtitulo={"Portafolio"}
           titulo={"Mis"}
           span={"Proyectos"}
-          colorTxt={"text-gray-900"}
+          colorTxt={"text-white"}
+          oscuro
         />
-        <div className="my-10 flex justify-center items-center flex-col md:grid md:grid-cols-2 md:place-items-center lg:grid lg:grid-cols-3 lg:place-items-center">
+        <div className="my-5 flex justify-center items-center flex-col md:grid md:grid-cols-2 md:place-items-center lg:grid lg:grid-cols-3 lg:place-items-center">
           <Proyectos />
         </div>
       </section>
 
       {/* Stack de tecnologias */}
-      <section id="habilidades" className="my-2 bg-neutral pt-2 pb-20">
+      <section id="habilidades" className="bg-neutral pt-10 pb-20">
         <Titulo
           subtitulo={"Stack de Tecnologias"}
           titulo={"Mis"}

@@ -98,7 +98,7 @@ const Titulo = ({ subtitulo, titulo, span, colorTxt, oscuro = false }) => {
   const cursorCol = oscuro ? "bg-primary" : "bg-primary/60";
 
   return (
-    <div className="text-center mt-15 mb-5">
+    <div className="text-center">
       {/* Ventana estilo Windows Terminal, reemplaza el eyebrow de líneas */}
       <div
         className={`inline-block mb-4 rounded-md border overflow-hidden shadow-sm ${panelBg} ${panelBorder}`}
@@ -119,7 +119,7 @@ const Titulo = ({ subtitulo, titulo, span, colorTxt, oscuro = false }) => {
         </div>
       </div>
 
-      <h2 className={`text-5xl font-bold ${colorTxt}`}>
+      <h2 className={`text-5xl font-bold font-mono ${colorTxt}`}>
         {titulo} <span className="text-primary">{span}</span>
       </h2>
     </div>

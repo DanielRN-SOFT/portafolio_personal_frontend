@@ -49,7 +49,7 @@ const HeroSection = () => {
   }, [text, phase, roleIndex]);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-linear-to-b from-base-200 via-base-100 to-base-200 flex items-center justify-center px-4 py-20">
+    <div className="relative min-h-screen w-full overflow-hidden bg-linear-to-b from-slate-900 via-slate-950 to-slate-950/95 flex items-center justify-center px-4 py-20">
       {/* Textura de fondo: grid de puntos, muy sutil, tono primary */}
       <div
         className="absolute inset-0 opacity-[0.15] text-primary"
