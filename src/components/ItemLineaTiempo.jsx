@@ -1,10 +1,59 @@
-const TerminalCardHeader = () => (
-  <div className="flex items-center gap-1.5 pb-2 mb-3 border-b border-base-200">
-    <span className="w-1.5 h-1.5 rounded-full bg-base-300" />
-    <span className="w-1.5 h-1.5 rounded-full bg-base-300" />
-    <span className="w-1.5 h-1.5 rounded-full bg-base-300" />
-    <span className="ml-auto text-[10px] font-mono text-gray-400 tracking-wide">
-      historial.log
+/**
+ * Barra de título estilo Windows Terminal / Windows 11.
+ * Reutiliza el mismo lenguaje visual que la card de proyectos.
+ */
+const WinTitleBar = ({ label }) => (
+  <div className="flex items-center gap-0 pb-2 mb-3 border-b border-base-200">
+    <span className="mr-1.5 h-2 w-2 rounded-[2px] bg-primary/50" />
+    <span className="flex-1 truncate text-[10px] font-mono text-gray-400 tracking-wide">
+      {label}
+    </span>
+
+    <span className="flex items-stretch -mr-1">
+      <span className="flex items-center justify-center w-6 h-5 text-gray-400 hover:bg-base-content/10 hover:text-gray-600 transition-colors">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
+          <line
+            x1="1"
+            y1="5"
+            x2="9"
+            y2="5"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+        </svg>
+      </span>
+      <span className="flex items-center justify-center w-6 h-5 text-gray-400 hover:bg-base-content/10 hover:text-gray-600 transition-colors">
+        <svg width="8" height="8" viewBox="0 0 9 9" fill="none">
+          <rect
+            x="0.5"
+            y="0.5"
+            width="8"
+            height="8"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+        </svg>
+      </span>
+      <span className="flex items-center justify-center w-6 h-5 text-gray-400 hover:bg-[#c42b1c] hover:text-white transition-colors">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
+          <line
+            x1="0.8"
+            y1="0.8"
+            x2="9.2"
+            y2="9.2"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <line
+            x1="9.2"
+            y1="0.8"
+            x2="0.8"
+            y2="9.2"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+        </svg>
+      </span>
     </span>
   </div>
 );
@@ -135,7 +184,7 @@ const CardContent = ({
   segundaFecha,
 }) => (
   <>
-    <TerminalCardHeader />
+    <WinTitleBar label="historial.log" />
     <div className="mb-3">
       <LogEntry
         titulo={primerTitulo}
