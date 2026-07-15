@@ -1,38 +1,47 @@
-import { useState } from "react";
-const RedesSociales = ({
-  ClasesIcono,
-  enlace,
-  titulo,
-  enlaceEmail,
-  enlaceWhatsApp,
-}) => {
-  let enlaceConvertido = "";
+/**
+ * Limpia una URL para mostrarla de forma legible:
+ * - quita protocolo y "www."
+ * - quita la barra final
+ * - si el último segmento termina en un sufijo numérico largo
+ *   (típico de LinkedIn, ej: "-658397376"), lo recorta
+ */
+const limpiarUrl = (url = "") => {
+  let limpia = url
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/+$/, "");
 
-  enlaceEmail
-    ? (enlaceConvertido = `mailto:${enlace}`)
-    : (enlaceConvertido = enlace);
-  enlaceWhatsApp
-    ? (enlaceConvertido = `https://wa.me/${enlace}`)
-    : (enlaceConvertido = enlace);
-  enlaceWhatsApp ? (enlace = "+57 321 5052083") : enlace == enlace;
+  const segmentos = limpia.split("/");
+  const ultimo = segmentos[segmentos.length - 1];
+  const sinSufijoNumerico = ultimo.replace(/-\d{4,}$/, "");
+  segmentos[segmentos.length - 1] = sinSufijoNumerico;
+
+  return segmentos.join("/");
+};
+
+const RedesSociales = ({ titulo, ClasesIcono, enlace, enlaceEmail = false }) => {
+  const href = enlaceEmail ? `mailto:${enlace}` : enlace;
+  const textoVisible = enlaceEmail ? enlace : limpiarUrl(enlace);
+
   return (
-    <div className="mb-8 flex w-full max-w-82.5 gap-3 text-gray-600">
-      <div className="mr-6 flex h-10 w-full max-w-10 items-center justify-center overflow-hidden rounded-sm bg-indigo-500/10  text-primary sm:h-17.5 sm:max-w-17.5">
-        <a href={enlaceConvertido} target="_blank">
-          <i class={`${ClasesIcono} text-xl`}></i>
-        </a>
-      </div>
-      <div className="w-full">
-        <h4 className="mb-1 text-base sm:text-xl font-bold">{titulo}</h4>
-        <a
-          href={enlaceConvertido}
-          className="text-xs sm:text-base text-primary hover:border-b hover:text-blue-700 transition-colors"
-          target="_blank"
-        >
-          {enlace}
-        </a>
-      </div>
-    </div>
+    <a
+      href={href}
+      target={enlaceEmail ? undefined : "_blank"}
+      rel={enlaceEmail ? undefined : "noopener noreferrer"}
+      className="group flex items-center gap-4 rounded-lg border border-neutral-content/10 bg-black/20 px-4 py-3 transition-colors hover:border-primary/40 hover:bg-primary/5"
+    >
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
+        <i className={ClasesIcono}></i>
+      </span>
+      <span className="min-w-0">
+        <span className="block text-xs font-mono text-neutral-content/40">
+          {titulo}
+        </span>
+        <span className="block truncate font-mono text-sm text-neutral-content/80 group-hover:text-primary transition-colors">
+          {textoVisible}
+        </span>
+      </span>
+    </a>
   );
 };
 

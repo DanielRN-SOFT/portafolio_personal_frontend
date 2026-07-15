@@ -33,7 +33,7 @@ function App() {
       {/* Card de Proyectos */}
       <section
         id="proyectos"
-        className="pt-10 pb-10 bg-linear-to-b from-slate-900 via-slate-950 to-slate-950/95"
+        className="py-20 bg-linear-to-b from-slate-900 via-slate-950 to-slate-950/95"
       >
         <Titulo
           subtitulo={"Portafolio"}
@@ -60,12 +60,16 @@ function App() {
       </section>
 
       {/* Formulario de contacto y redes sociales */}
-      <section id="contacto" className="my-20">
+      <section
+        id="contacto"
+        className="py-10 bg-linear-to-b from-slate-900 via-slate-950 to-slate-950/95"
+      >
         <Titulo
           subtitulo={"Contacto"}
           titulo={"Mi"}
           span={"Contacto"}
-          colorTxt={"text-gray-900"}
+          colorTxt={"text-white"}
+          oscuro
         />
         <FormularioContacto />
       </section>
