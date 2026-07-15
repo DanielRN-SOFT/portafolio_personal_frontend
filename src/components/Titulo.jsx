@@ -12,18 +12,22 @@ const slugify = (text = "") =>
  * historial de línea de tiempo), con variante para fondos oscuros.
  */
 const WinTitleBar = ({ label, oscuro }) => {
-  const barBg = oscuro ? "bg-white/10" : "bg-black/20 backdrop-blur-sm";
-  const labelCol = oscuro ? "text-white/50" : "text-base-content/40";
-  const iconIdle = oscuro ? "text-white/50" : "text-base-content/40";
+  const barBg = oscuro
+    ? "bg-black/30 backdrop-blur-sm"
+    : "bg-black/20 backdrop-blur-sm";
+  const labelCol = oscuro ? "text-neutral-content/40" : "text-base-content/40";
+  const iconIdle = oscuro ? "text-neutral-content/40" : "text-base-content/40";
   const iconHover = oscuro
-    ? "hover:bg-white/15 hover:text-white/90"
+    ? "hover:bg-neutral-content/10 hover:text-neutral-content/80"
     : "hover:bg-base-content/10 hover:text-base-content/80";
 
   return (
     <div
       className={`flex items-center gap-0 pl-3 pr-0 py-0 rounded-t-md ${barBg}`}
     >
-      <span className="mr-1.5 h-2 w-2 rounded-[2px] bg-primary" />
+      <span
+        className={`mr-1.5 h-2 w-2 rounded-[2px] ${oscuro ? "bg-primary/70" : "bg-primary/50"}`}
+      />
       <span
         className={`flex-1 truncate py-1.5 text-[10px] font-mono ${labelCol}`}
       >
@@ -89,11 +93,14 @@ const WinTitleBar = ({ label, oscuro }) => {
 const Titulo = ({ subtitulo, titulo, span, colorTxt, oscuro = false }) => {
   const slug = slugify(subtitulo || titulo || "seccion");
 
-  const panelBg = oscuro ? "bg-white/5" : "bg-base-300/40";
-  const panelBorder = oscuro ? "border-white/15" : "border-primary/15";
+  const panelBg = oscuro ? "bg-neutral" : "bg-base-300/40";
+  const panelBorder = oscuro
+    ? "border-neutral-content/10"
+    : "border-primary/15";
+  const panelShadow = oscuro ? "shadow-2xl shadow-black/30" : "shadow-sm";
   const promptCol = oscuro ? "text-primary" : "text-primary/40";
   const subtituloCol = oscuro
-    ? "text-white font-bold"
+    ? "text-neutral-content font-bold"
     : "text-primary font-semibold";
   const cursorCol = oscuro ? "bg-primary" : "bg-primary/60";
 
@@ -101,7 +108,7 @@ const Titulo = ({ subtitulo, titulo, span, colorTxt, oscuro = false }) => {
     <div className="text-center">
       {/* Ventana estilo Windows Terminal, reemplaza el eyebrow de líneas */}
       <div
-        className={`inline-block mb-4 rounded-md border overflow-hidden shadow-sm ${panelBg} ${panelBorder}`}
+        className={`inline-block mb-4 rounded-lg border overflow-hidden ${panelBg} ${panelBorder} ${panelShadow}`}
       >
         <WinTitleBar label={`~/${slug}.sh`} oscuro={oscuro} />
         <div className="px-4 py-2 text-left">
@@ -119,8 +126,15 @@ const Titulo = ({ subtitulo, titulo, span, colorTxt, oscuro = false }) => {
         </div>
       </div>
 
-      <h2 className={`text-5xl font-bold font-mono ${colorTxt}`}>
-        {titulo} <span className="text-primary">{span}</span>
+      <h2
+        className={`text-4xl sm:text-5xl font-mono tracking-tight ${colorTxt}`}
+      >
+        <span className="font-light">{titulo}</span>{" "}
+        <span className="inline-flex items-baseline font-bold text-primary">
+          <span className="text-primary/40">&lt;</span>
+          {span}
+          <span className="text-primary/40">&nbsp;/&gt;</span>
+        </span>
       </h2>
     </div>
   );
