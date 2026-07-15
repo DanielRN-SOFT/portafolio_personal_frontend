@@ -4,7 +4,7 @@
  */
 const WinTitleBar = ({ label }) => (
   <div className="flex items-center gap-0 pb-2 mb-3 border-b border-neutral-content/10">
-    <span className="mr-1.5 h-2 w-2 rounded-[2px] bg-primary/60" />
+    <span className="mr-1.5 h-2 w-2 rounded-xs bg-primary/60" />
     <span className="flex-1 truncate text-[10px] font-mono text-neutral-content/40 tracking-wide">
       {label}
     </span>
