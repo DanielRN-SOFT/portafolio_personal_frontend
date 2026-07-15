@@ -59,7 +59,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar sticky top-0 z-50 border-b border-neutral-content/10 bg-neutral/95 backdrop-blur px-4 sm:px-6">
+    <div className="navbar sticky top-0 z-50 border-b border-neutral-content/10 bg-neutral backdrop-blur px-4 sm:px-6">
       <div className="navbar-start gap-2">
         {/* Dropdown móvil */}
         <div className="dropdown">

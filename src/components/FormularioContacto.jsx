@@ -79,15 +79,18 @@ const inputClasses =
 
 const FormularioContacto = () => {
   return (
-    <div className="relative z-10 overflow-hidden pt-4 pb-8 sm:pb-16 lg:pb-20 text-neutral-content mb-3">
+    <div className="relative z-10 overflow-hidden pt-8 pb-8 sm:pb-16 lg:pb-20 text-neutral-content mb-3">
       <div className="container mx-auto">
-        <div className="mx-4 grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div className="mx-4 grid gap-10 lg:grid-cols-2 lg:items-stretch">
           {/* Formulario */}
-          <div className="order-2 lg:order-1">
-            <div className="relative rounded-lg border border-neutral-content/10 bg-neutral shadow-2xl shadow-black/40 overflow-hidden">
+          <div className="order-2 lg:order-1 flex">
+            <div className="relative flex flex-col w-full rounded-lg border border-neutral-content/10 bg-neutral shadow-2xl shadow-black/40 overflow-hidden">
               <WinTitleBar label="~/contacto/nuevo-mensaje.sh" />
 
-              <form className="px-5 py-6 sm:px-8 sm:py-8" id="contactForm">
+              <form
+                className="flex flex-col flex-1 px-5 py-6 sm:px-8 sm:py-8"
+                id="contactForm"
+              >
                 <CampoTerminal prompt="nombre" icon="fas fa-user">
                   <input
                     type="text"
@@ -108,19 +111,18 @@ const FormularioContacto = () => {
                   />
                 </CampoTerminal>
 
-                <div className="mb-6">
+                <div className="mb-6 flex flex-col flex-1">
                   <p className="font-mono text-[11px] text-neutral-content/40 mb-1.5">
                     <span className="text-primary/50">&gt;</span> mensaje
                   </p>
-                  <div className="relative">
+                  <div className="relative flex-1">
                     <div className="absolute top-3.5 left-3 pointer-events-none">
                       <i className="fas fa-comment text-neutral-content/30"></i>
                     </div>
                     <textarea
-                      rows="6"
                       name="message"
                       placeholder="Contame sobre tu proyecto..."
-                      className={inputClasses}
+                      className={`${inputClasses} h-full min-h-32 resize-none`}
                       required
                     ></textarea>
                   </div>
@@ -140,37 +142,45 @@ const FormularioContacto = () => {
           </div>
 
           {/* Información de contacto */}
-          <div className="order-1 lg:order-2 px-5">
-            <h2 className="text-neutral-content text-[28px] sm:text-[36px] lg:text-[32px] xl:text-[36px] font-mono font-bold tracking-tight uppercase mb-4">
-              Conversemos
-            </h2>
-            <p className="text-neutral-content/50 mb-8 text-base sm:text-lg leading-relaxed max-w-md">
-              ¿Tienes un proyecto en mente? Estoy disponible para colaboraciones
-              y nuevos desafíos.
-            </p>
+          <div className="order-1 lg:order-2 flex">
+            <div className="flex flex-col w-full rounded-lg border border-neutral-content/10 bg-neutral shadow-2xl shadow-black/40 overflow-hidden">
+              <WinTitleBar label="~/contacto/informacion.sh" />
 
-            {/* Panel con el mismo lenguaje visual del hero: // contacto */}
-            <div className="rounded-lg border border-neutral-content/10 bg-neutral/60 backdrop-blur-sm px-5 py-5 font-mono">
-              <p className="text-xs text-neutral-content/40 mb-3">// canales</p>
-              <div className="flex flex-col gap-3">
-                <RedesSociales
-                  titulo={"GitHub"}
-                  ClasesIcono={"fa-brands fa-square-github"}
-                  enlace={"https://github.com/DanielRN-SOFT"}
-                />
-                <RedesSociales
-                  titulo={"Correo electronico"}
-                  enlace={"daniel20ramirez06@gmail.com"}
-                  enlaceEmail={true}
-                  ClasesIcono={"fas fa-envelope"}
-                />
-                <RedesSociales
-                  titulo={"LinkedIn"}
-                  enlace={
-                    "https://www.linkedin.com/in/daniel-ram%C3%ADrez-navarro-658397376/"
-                  }
-                  ClasesIcono={"fa-brands fa-linkedin"}
-                />
+              <div className="flex flex-col flex-1 px-5 py-6 sm:px-8 sm:py-8">
+                <h2 className="text-neutral-content text-[26px] sm:text-[32px] font-mono font-bold tracking-tight uppercase mb-4">
+                  Conversemos
+                </h2>
+                <p className="text-neutral-content/50 mb-8 text-base leading-relaxed">
+                  ¿Tienes un proyecto en mente? Estoy disponible para
+                  colaboraciones y nuevos desafíos.
+                </p>
+
+                {/* Panel con el mismo lenguaje visual del hero: // canales */}
+                <div className="flex flex-col flex-1 rounded-lg border border-neutral-content/10 bg-black/20 px-5 py-5 font-mono">
+                  <p className="text-xs text-neutral-content/40 mb-3">
+                    // canales
+                  </p>
+                  <div className="flex flex-col gap-3 flex-1 justify-between">
+                    <RedesSociales
+                      titulo={"GitHub"}
+                      ClasesIcono={"fa-brands fa-square-github"}
+                      enlace={"https://github.com/DanielRN-SOFT"}
+                    />
+                    <RedesSociales
+                      titulo={"Correo electronico"}
+                      enlace={"daniel20ramirez06@gmail.com"}
+                      enlaceEmail={true}
+                      ClasesIcono={"fas fa-envelope"}
+                    />
+                    <RedesSociales
+                      titulo={"LinkedIn"}
+                      enlace={
+                        "https://www.linkedin.com/in/daniel-ram%C3%ADrez-navarro-658397376/"
+                      }
+                      ClasesIcono={"fa-brands fa-linkedin"}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
