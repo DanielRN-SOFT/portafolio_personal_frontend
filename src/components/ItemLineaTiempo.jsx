@@ -1,16 +1,16 @@
 /**
  * Barra de título estilo Windows Terminal / Windows 11.
- * Reutiliza el mismo lenguaje visual que la card de proyectos.
+ * Reutiliza el mismo lenguaje visual que el hero y el navbar.
  */
 const WinTitleBar = ({ label }) => (
-  <div className="flex items-center gap-0 pb-2 mb-3 border-b border-base-200">
-    <span className="mr-1.5 h-2 w-2 rounded-[2px] bg-primary/50" />
-    <span className="flex-1 truncate text-[10px] font-mono text-gray-400 tracking-wide">
+  <div className="flex items-center gap-0 pb-2 mb-3 border-b border-neutral-content/10">
+    <span className="mr-1.5 h-2 w-2 rounded-[2px] bg-primary/60" />
+    <span className="flex-1 truncate text-[10px] font-mono text-neutral-content/40 tracking-wide">
       {label}
     </span>
 
     <span className="flex items-stretch -mr-1">
-      <span className="flex items-center justify-center w-6 h-5 text-gray-400 hover:bg-base-content/10 hover:text-gray-600 transition-colors">
+      <span className="flex items-center justify-center w-6 h-5 text-neutral-content/40 hover:bg-neutral-content/10 hover:text-neutral-content transition-colors">
         <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
           <line
             x1="1"
@@ -22,7 +22,7 @@ const WinTitleBar = ({ label }) => (
           />
         </svg>
       </span>
-      <span className="flex items-center justify-center w-6 h-5 text-gray-400 hover:bg-base-content/10 hover:text-gray-600 transition-colors">
+      <span className="flex items-center justify-center w-6 h-5 text-neutral-content/40 hover:bg-neutral-content/10 hover:text-neutral-content transition-colors">
         <svg width="8" height="8" viewBox="0 0 9 9" fill="none">
           <rect
             x="0.5"
@@ -34,7 +34,7 @@ const WinTitleBar = ({ label }) => (
           />
         </svg>
       </span>
-      <span className="flex items-center justify-center w-6 h-5 text-gray-400 hover:bg-[#c42b1c] hover:text-white transition-colors">
+      <span className="flex items-center justify-center w-6 h-5 text-neutral-content/40 hover:bg-[#c42b1c] hover:text-white transition-colors">
         <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
           <line
             x1="0.8"
@@ -67,8 +67,10 @@ const LogEntry = ({ titulo, institucion, fecha }) => {
         <span className="font-mono text-primary/40 text-xs">{">"}</span>
         {titulo}
       </h4>
-      <h5 className="text-xs text-gray-500 font-mono mt-0.5">{institucion}</h5>
-      <h6 className="font-mono text-[11px] text-gray-500 mt-1 inline-flex items-center gap-1.5">
+      <h5 className="text-xs text-neutral-content/50 font-mono mt-0.5">
+        {institucion}
+      </h5>
+      <h6 className="font-mono text-[11px] text-neutral-content/50 mt-1 inline-flex items-center gap-1.5">
         <span className="text-primary/40">[</span>
         {fecha}
         <span className="text-primary/40">]</span>
@@ -97,7 +99,7 @@ const ItemLineaTiempo = ({
     <>
       {/* ── MÓVIL: fila con 3 columnas fijas ── */}
       <li className="grid grid-cols-[52px_24px_1fr] lg:hidden">
-        <div className="flex justify-end items-start pt-1.5 pr-2 text-xs text-gray-500 font-mono font-medium">
+        <div className="flex justify-end items-start pt-1.5 pr-2 text-xs text-neutral-content/50 font-mono font-medium">
           {year}
         </div>
         <div className="flex flex-col items-center">
@@ -113,9 +115,11 @@ const ItemLineaTiempo = ({
               clipRule="evenodd"
             />
           </svg>
-          {!isLast && <div className="w-0.5 flex-1 bg-base-300 mt-1" />}
+          {!isLast && (
+            <div className="w-0.5 flex-1 bg-neutral-content/15 mt-1" />
+          )}
         </div>
-        <div className="timeline-box text-sm text-gray-900 ml-2 mb-4">
+        <div className="timeline-box bg-neutral border border-neutral-content/10 text-sm text-neutral-content ml-2 mb-4">
           <CardContent
             {...{
               primerTitulo,
@@ -134,7 +138,7 @@ const ItemLineaTiempo = ({
         {/* Línea + ícono */}
         <div className="flex items-center w-full">
           <div
-            className={`h-0.5 flex-1 bg-base-300 ${isLast ? "invisible" : ""}`}
+            className={`h-0.5 flex-1 bg-neutral-content/15 ${isLast ? "invisible" : ""}`}
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -149,15 +153,15 @@ const ItemLineaTiempo = ({
             />
           </svg>
           <div
-            className={`h-0.5 flex-1 bg-base-300 ${isLast ? "invisible" : ""}`}
+            className={`h-0.5 flex-1 bg-neutral-content/15 ${isLast ? "invisible" : ""}`}
           />
         </div>
         {/* Año */}
-        <span className="text-sm font-mono font-medium text-gray-500">
+        <span className="text-sm font-mono font-medium text-neutral-content/50">
           {year}
         </span>
         {/* Card */}
-        <div className="timeline-box text-sm text-gray-900 w-full">
+        <div className="timeline-box bg-slate-950 border border-neutral-content/10 text-sm text-neutral-content w-full">
           <CardContent
             {...{
               primerTitulo,
@@ -192,7 +196,7 @@ const CardContent = ({
         fecha={primeraFecha}
       />
     </div>
-    <hr className="my-2 border-base-200" />
+    <hr className="my-2 border-neutral-content/10" />
     <LogEntry
       titulo={segundoTitulo}
       institucion={segundaInstitucion}
